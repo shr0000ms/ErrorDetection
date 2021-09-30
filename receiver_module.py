@@ -7,15 +7,12 @@ def checklrc(s):
 
 
 def checkvrc(s):
-    sum = 0
+    val=0
     for c in s:
         if c != '0' and c != '1':
             return False
-        if c == '1':
-            sum += 1
-    if sum % 2 == 0:
-        return True
-    return False
+        val^=c
+    return !val
 
 
 def checkChecksum(msg, k=8):
